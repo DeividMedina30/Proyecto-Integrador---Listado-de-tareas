@@ -1,21 +1,27 @@
+import { useState } from "react";
+
+import { tareasLista } from '../utils/tasks';
 
 export const Task = (props) => {
-    const { name, state } = props;
-    if(state == "completed"){
-        return(
-            <div>
-                <input type= "checkbox" checked />{name}
-            </div>
-        );
-    }else if( state == "to do"){
-        return(
-            <div>
-                <input type= "checkbox" />{name}
-            </div>
-        );   
-    }else{
-        return(
-            <del>Undefined Task<br /></del>
-        );
-    }
-};
+
+    const { name, state, onChange, isCompleted } = props;
+
+    const handleOnChange = () =>{
+
+    onChange(name);
+
+}
+
+return(
+
+    <div>
+
+    { isCompleted ? (<><input type="checkbox" onChange={handleOnChange} checked /><del>{name}</del></>) : (<><input type="checkbox" onChange={handleOnChange} />{name} </>)}
+
+    </div>
+
+);
+
+}
+
+
