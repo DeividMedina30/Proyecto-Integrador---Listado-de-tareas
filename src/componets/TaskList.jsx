@@ -1,11 +1,11 @@
 import { Task } from "./Task";
 
 export const TaskList = (props) => {
-    const {listaTareas} = props;
+    const {list} = props;
     return(
 		<ul>
 			{
-				listaTareas.map((task) => (
+				list?.map((task) => (
 					<Task name = {task.name} state = {task.state} />
 				) )
 			}

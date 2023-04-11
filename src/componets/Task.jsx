@@ -10,7 +10,7 @@ export const Task = (props) => {
     }else if( state == "to do"){
         return(
             <div>
-                <input type= "checkbox" checked/>{name}
+                <input type= "checkbox" />{name}
             </div>
         );   
     }else{
